@@ -1,0 +1,56 @@
+Phase I Report — SetA
+============================================================
+
+Split Summary
+----------------------------------------
+class_name  Stroma  Normal   G3   G4   G5
+split                                    
+train          680     680  680  680  425
+val            120     120  120  120   75
+test           200     200  200  200  200
+
+Class Weights Used
+----------------------------------------
+  Stroma: 0.9250  Normal: 0.9250  G3: 0.9250  G4: 0.9250  G5: 1.4800
+
+Per-Class Test Metrics
+----------------------------------------
+        Precision  Recall  Specificity      F1  Support
+Class                                                  
+Stroma     0.9756   1.000       0.9938  0.9877      200
+Normal     0.9804   1.000       0.9950  0.9901      200
+G3         0.9561   0.980       0.9888  0.9679      200
+G4         0.9153   0.810       0.9812  0.8594      200
+G5         0.8947   0.935       0.9725  0.9144      200
+
+Overall Accuracy : 0.9450
+Macro F1         : 0.9439
+Weighted F1      : 0.9439
+
+Confidence & Error Summary
+----------------------------------------
+        N_correct  N_errors  Conf(correct)  Conf(wrong) Spec_flag
+Class                                                            
+Stroma        200         0         0.9984          NaN          
+Normal        200         0         0.9994          NaN          
+G3            196         4         0.9810       0.6828          
+G4            162        38         0.9522       0.8318          
+G5            187        13         0.9400       0.7372          
+
+Top Confused Pairs
+----------------------------------------
+True Predicted  Count  Rate
+  G4        G5     22 0.110
+  G5        G4     12 0.060
+  G4        G3      9 0.045
+  G4    Normal      4 0.020
+  G3        G4      3 0.015
+  G4    Stroma      3 0.015
+  G3    Stroma      1 0.005
+  G5    Stroma      1 0.005
+
+Training Info
+----------------------------------------
+Best epoch       : 11
+Best Val F1      : 0.9293
+Checkpoint       : outputs/seta/checkpoints/best_model.pth

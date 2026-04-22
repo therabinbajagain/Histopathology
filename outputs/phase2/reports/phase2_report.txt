@@ -1,0 +1,31 @@
+Phase II Report — Latent Space Analysis
+====================================================
+Total patches : 3000
+
+Per-source accuracy and Macro F1:
+  SetA    : acc=94.10%  macro-F1=93.98%
+  SetB    : acc=95.30%  macro-F1=95.30%
+  NTU     : acc=50.20%  macro-F1=45.73%
+
+Transition patches (low_margin OR near_boundary):
+  Total        : 593 (19.8%)
+  low_margin   : 83
+  near_boundary: 549
+
+Progression score (mean +/- std):
+  Stroma  : +10.638 +/- 2.010
+  Normal  : +7.249 +/- 2.564
+  G3      : +0.000 +/- 7.281
+  G4      : +9.255 +/- 4.287
+  G5      : +19.229 +/- 4.287
+
+Note: progression axis is defined by G3 and G5 test-set centroids.
+G3/G5 ordering near axis endpoints is by construction.
+The meaningful finding is G4 width and its intermediate position.
+
+Within-class compactness (mean +/- std dist to centroid):
+  Stroma  : 15.78 +/- 5.07
+  Normal  : 18.42 +/- 5.93
+  G3      : 19.13 +/- 5.43
+  G4      : 18.65 +/- 4.47
+  G5      : 15.31 +/- 4.76

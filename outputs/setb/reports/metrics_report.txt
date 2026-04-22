@@ -1,0 +1,58 @@
+Phase I Report — SetB
+============================================================
+
+Split Summary
+----------------------------------------
+class_name  Stroma  Normal   G3   G4   G5
+split                                    
+train          680     680  680  680  425
+val            120     120  120  120   75
+test           200     200  200  200  200
+
+Class Weights Used
+----------------------------------------
+  Stroma: 0.9250  Normal: 0.9250  G3: 0.9250  G4: 0.9250  G5: 1.4800
+
+Per-Class Test Metrics
+----------------------------------------
+        Precision  Recall  Specificity      F1  Support
+Class                                                  
+Stroma     0.9608   0.980       0.9900  0.9703      200
+Normal     0.9851   0.995       0.9962  0.9900      200
+G3         0.9793   0.945       0.9950  0.9618      200
+G4         0.9000   0.945       0.9738  0.9220      200
+G5         0.9476   0.905       0.9875  0.9258      200
+
+Overall Accuracy : 0.9540
+Macro F1         : 0.9540
+Weighted F1      : 0.9540
+
+Confidence & Error Summary
+----------------------------------------
+        N_correct  N_errors  Conf(correct)  Conf(wrong) Spec_flag
+Class                                                            
+Stroma        196         4         0.9912       0.8593          
+Normal        199         1         0.9957       0.6427          
+G3            189        11         0.9909       0.9039          
+G4            189        11         0.9905       0.7899          
+G5            181        19         0.9809       0.8905          
+
+Top Confused Pairs
+----------------------------------------
+  True Predicted  Count  Rate
+    G5        G4     19 0.095
+    G4        G5      9 0.045
+    G3    Stroma      7 0.035
+Stroma        G3      2 0.010
+    G3    Normal      2 0.010
+    G3        G4      2 0.010
+Stroma    Normal      1 0.005
+Stroma        G5      1 0.005
+Normal        G3      1 0.005
+    G4    Stroma      1 0.005
+
+Training Info
+----------------------------------------
+Best epoch       : 21
+Best Val F1      : 0.9568
+Checkpoint       : outputs/setb/checkpoints/best_model.pth

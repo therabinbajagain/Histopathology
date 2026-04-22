@@ -1,0 +1,13 @@
+n_features,features,cv_r2
+1,glcm_homogeneity,-0.1496
+2,glcm_homogeneity+glcm_contrast,-0.232
+3,glcm_homogeneity+glcm_contrast+glcm_correlation,-0.1624
+4,glcm_homogeneity+glcm_contrast+glcm_correlation+sai,-0.466
+5,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac,-0.4826
+6,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac,-0.3097
+7,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac+lumen_frac,-0.3097
+8,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac+lumen_frac+crowding_index,-0.5189
+9,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac+lumen_frac+crowding_index+stroma_frac,-0.6009
+10,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac+lumen_frac+crowding_index+stroma_frac+epi_stroma_ratio,-0.6165
+11,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac+lumen_frac+crowding_index+stroma_frac+epi_stroma_ratio+glcm_energy,-0.3237
+12,glcm_homogeneity+glcm_contrast+glcm_correlation+sai+epithelial_frac+nuclei_frac+lumen_frac+crowding_index+stroma_frac+epi_stroma_ratio+glcm_energy+texture_entropy,-0.0036

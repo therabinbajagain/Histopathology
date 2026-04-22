@@ -1,0 +1,82 @@
+========================================================================
+PHASE IV — STRUCTURAL BIOINTERPRETABILITY REPORT
+Generated: 2026-04-23 03:45
+========================================================================
+
+1. DATASET
+----------------------------------------
+  SetA: 1000 patches
+  SetB: 1000 patches
+  NTU: 1000 patches
+
+2. SPEARMAN CORRELATIONS (Bonferroni corrected, α/12)
+----------------------------------------
+  Significant: 9 / 12 features (threshold = 0.00417)
+  * glcm_correlation         : rho=-0.477, p=5.915e-103
+  * lumen_frac               : rho=-0.434, p=1.616e-83
+  * sai                      : rho=-0.408, p=3.832e-73
+  * glcm_homogeneity         : rho=-0.373, p=1.172e-60
+  * glcm_contrast            : rho=+0.348, p=1.528e-52
+  * nuclei_frac              : rho=+0.289, p=4.862e-36
+  * epithelial_frac          : rho=+0.286, p=3.355e-35
+  * epi_stroma_ratio         : rho=+0.206, p=1.246e-18
+  * crowding_index           : rho=+0.202, p=5.339e-18
+    texture_entropy          : rho=+0.054, p=2.092e-02
+    glcm_energy              : rho=-0.033, p=1.609e-01
+    stroma_frac              : rho=+0.004, p=8.801e-01
+
+3. KRUSKAL-WALLIS ACROSS 5 CLASSES
+----------------------------------------
+  * epithelial_frac          : H=1489.91, p=0.000e+00
+  * epi_stroma_ratio         : H=1403.25, p=1.363e-302
+  * nuclei_frac              : H=1378.41, p=3.315e-297
+  * crowding_index           : H=1324.63, p=1.522e-285
+  * stroma_frac              : H=1173.72, p=7.927e-253
+  * glcm_homogeneity         : H=1100.52, p=5.849e-237
+  * glcm_contrast            : H=1098.44, p=1.653e-236
+  * sai                      : H= 863.95, p=1.078e-185
+  * glcm_energy              : H= 694.01, p=6.904e-149
+  * texture_entropy          : H= 673.38, p=2.027e-144
+  * lumen_frac               : H= 662.29, p=5.096e-142
+  * glcm_correlation         : H= 617.64, p=2.357e-132
+
+4. SAI PER CLASS
+----------------------------------------
+  Stroma  : mean=0.438, std=0.074
+  Normal  : mean=0.478, std=0.168
+  G3      : mean=0.374, std=0.081
+  G4      : mean=0.384, std=0.115
+  G5      : mean=0.289, std=0.095
+
+5. SAI WEIGHT SENSITIVITY
+----------------------------------------
+  Spearman rho varies < 0.01 across weight pairs (0.5/0.5 to 0.8/0.2).
+  Selected: wL=0.6, wN=0.4.
+
+6. ABLATION (CV R² vs progression score)
+----------------------------------------
+  glcm_homogeneity         : CV R²=-0.150
+  glcm_contrast            : CV R²=-0.190
+  glcm_correlation         : CV R²=-0.202
+  sai                      : CV R²=-0.325
+  epithelial_frac          : CV R²=-0.340
+  nuclei_frac              : CV R²=-0.368
+
+7. G4 HETEROGENEITY
+----------------------------------------
+  Levene F=10.737, p=0.0000
+  G3: mean=0.374, std=0.081
+  G4: mean=0.384, std=0.115
+  G5: mean=0.289, std=0.095
+
+8. CONCLUSION
+----------------------------------------
+  9 of 12 structural features show significant Spearman correlation
+  with the Gleason progression score after Bonferroni correction
+  (alpha/12=0.00417). Lumen fraction decreases and cellular crowding
+  increases monotonically from G3 to G5. SAI weight choice is robust
+  (delta_rho < 0.01). G4 exhibits elevated SAI variance (Levene
+  p=0.0000), reflecting Gleason 4 architectural heterogeneity.
+  Domain-level variation affects absolute feature values; cross-
+  domain comparison requires domain adaptation.
+========================================================================

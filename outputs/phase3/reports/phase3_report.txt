@@ -1,0 +1,39 @@
+Phase III Report — Domain Shift and Robustness Analysis
+==========================================================
+
+1. Silhouette scores
+   By domain : +0.0044
+   By class  : +0.1627
+
+2. Performance by domain
+   SetA    : acc=94.10%   Macro F1=93.98%
+   SetB    : acc=95.30%   Macro F1=95.30%
+   NTU     : acc=50.20%   Macro F1=45.73%
+
+3. Calibration (ECE)
+   SetA    : ECE=0.0296   conf|correct=0.9774   conf|wrong=0.7894
+   SetB    : ECE=0.0321   conf|correct=0.9921   conf|wrong=0.8390
+   NTU     : ECE=0.3695   conf|correct=0.9072   conf|wrong=0.8455
+
+4. Progression ordering (G3 < G4 < G5)
+   SetA    : True  (G3=-4.712 G4=+10.282 G5=+20.629)
+   SetB    : True  (G3=-0.646 G4=+8.987 G5=+20.727)
+   NTU     : True  (G3=+5.331 G4=+7.389 G5=+17.511)
+
+5. Stain normalisation (Reinhard, SetA reference)
+   NTU original   : acc=50.20%   Macro F1=45.73%
+   NTU normalised : acc=50.40%   Macro F1=46.00%
+   Delta acc       : +0.20%
+   Delta Macro F1  : +0.27%
+
+6. Cross-domain symmetric evaluation (SetA ↔ SetB)
+   SetA→SetA     : acc=94.10%   Macro F1=93.98%  [in-domain]
+   SetA→SetB     : acc=50.50%   Macro F1=39.59%  [cross-domain]
+   SetB→SetA     : acc=57.10%   Macro F1=55.75%  [cross-domain]
+   SetB→SetB     : acc=95.30%   Macro F1=95.30%  [in-domain]
+   F1 drop SetA→SetB : +54.39 pp
+   F1 drop SetB→SetA : +39.54 pp
+
+──────────────────────────────────────────────────────────
+Interpretation:
+  See Phase III design document for decision rules.
